@@ -1,0 +1,7 @@
+{
+  "makefile.extensionOutputFolder": "./.vscode",
+  "go.lintTool":"golangci-lint",
+  "go.lintFlags": [
+    "--fast"
+  ]
+}
