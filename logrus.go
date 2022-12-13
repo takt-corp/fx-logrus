@@ -22,37 +22,37 @@ func (l *LogrusLogger) LogEvent(event fxevent.Event) {
 		l.Logger.WithFields(logrus.Fields{
 			"callee": e.FunctionName,
 			"caller": e.CallerName,
-		}).Debug("OnStart hook executing")
+		}).Debug("on start hook executing")
 	case *fxevent.OnStartExecuted:
 		if e.Err != nil {
 			l.Logger.WithFields(logrus.Fields{
 				"callee": e.FunctionName,
 				"caller": e.CallerName,
-			}).Errorf("OnStart hook failed: %v", e.Err)
+			}).Errorf("on start hook failed: %v", e.Err)
 		} else {
 			l.Logger.WithFields(logrus.Fields{
 				"callee":  e.FunctionName,
 				"caller":  e.CallerName,
 				"runtime": e.Runtime.String(),
-			}).Debug("OnStart hook executed")
+			}).Debug("on start hook executed")
 		}
 	case *fxevent.OnStopExecuting:
 		l.Logger.WithFields(logrus.Fields{
 			"callee": e.FunctionName,
 			"caller": e.CallerName,
-		}).Debug("OnStop hook executing")
+		}).Debug("on stop hook executing")
 	case *fxevent.OnStopExecuted:
 		if e.Err != nil {
 			l.Logger.WithFields(logrus.Fields{
 				"callee": e.FunctionName,
 				"caller": e.CallerName,
-			}).Errorf("OnStop hook failed: %v", e.Err)
+			}).Errorf("on stop hook failed: %v", e.Err)
 		} else {
 			l.Logger.WithFields(logrus.Fields{
 				"callee":  e.FunctionName,
 				"caller":  e.CallerName,
 				"runtime": e.Runtime.String(),
-			}).Debug("OnStop hook executed")
+			}).Debug("on stop hook executed")
 		}
 	case *fxevent.Supplied:
 		l.Logger.WithFields(logrus.Fields{

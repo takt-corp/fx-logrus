@@ -1,7 +1,10 @@
 {
   "makefile.extensionOutputFolder": "./.vscode",
+  "gopls": {
+    "ui.semanticTokens": true
+  },
   "go.lintTool":"golangci-lint",
   "go.lintFlags": [
     "--fast"
-  ]
+  ],
 }
